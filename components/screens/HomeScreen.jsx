@@ -8,6 +8,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import Location from "react-native-vector-icons/Octicons";
 // import CleaningServices from "./cleaningserScreens/CleaningServices";
 // import ServiceDetails from "./cleaningserScreens/ServiceDetails";
+import TowingService from './TowingService'
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -74,6 +75,10 @@ export default function App() {
           name="ServiceDetails"
           component={ServiceDetails}
         /> */}
+        <Stack.Screen
+          name="Towing Service"
+          component={TowingService}
+        /> 
       </Stack.Navigator>
     // </NavigationContainer>
   );

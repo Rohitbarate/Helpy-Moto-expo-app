@@ -218,7 +218,7 @@ const CustomerRating = [
         id:1,
         name:'Towing service',
         img:require("../../assets/img/towicon.png"),
-        screen:'Hire Driver'
+        screen:'Towing Service'
     },
     {
         id:2,
