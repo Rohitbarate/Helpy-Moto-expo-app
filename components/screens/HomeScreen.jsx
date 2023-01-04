@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, TouchableOpacity, Image,View,Text } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NearbyDrivers from "./NearbyDrivers";
