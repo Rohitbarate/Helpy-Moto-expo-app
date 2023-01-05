@@ -6,9 +6,8 @@ import DriverInfo from "./DriverInfo";
 import Home from "./Home";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Location from "react-native-vector-icons/Octicons";
-// import CleaningServices from "./cleaningserScreens/CleaningServices";
-// import ServiceDetails from "./cleaningserScreens/ServiceDetails";
 import TowingService from './TowingService'
+import CleaningServices from "./CleaningServices";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -67,14 +66,14 @@ export default function App() {
           component={DriverInfo}
           options={{ headerShown: false }}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Cleaning Services"
           component={CleaningServices}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="ServiceDetails"
           component={ServiceDetails}
-        /> */}
+        />  */}
         <Stack.Screen
           name="Towing Service"
           component={TowingService}
