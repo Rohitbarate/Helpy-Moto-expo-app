@@ -6,8 +6,9 @@ import DriverInfo from "./DriverInfo";
 import Home from "./Home";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Location from "react-native-vector-icons/Octicons";
-import TowingService from './TowingService'
+import TowingService from "./TowingService"
 import CleaningServices from "./CleaningServices";
+import ServiceDetails from "./ServiceDetails"
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -78,6 +79,14 @@ export default function App() {
           name="Towing Service"
           component={TowingService}
         /> 
+        <Stack.Screen 
+        name="ServiceDetails" 
+        component={ServiceDetails} 
+        options={
+          ({ route }) => ({
+            headerTitle: route.params.item.serviceName,
+            headerShown: true
+          })} />
       </Stack.Navigator>
     // </NavigationContainer>
   );

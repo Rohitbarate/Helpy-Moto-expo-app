@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, FlatList,Share, TouchableOpacity, Linkin
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import HeartIcon from "react-native-vector-icons/Fontisto";
-import StarIcon from "react-native-vector-icons/Entypo";
+import StarIcon from "react-native-vector-icons/FontAwesome";
 import ContactIcon from "react-native-vector-icons/FontAwesome";
 import LocationIcon from "react-native-vector-icons/SimpleLineIcons";
 import RatingCard from "./RatingCard";
@@ -54,7 +54,7 @@ const DriverInfo = ({ route, navigation }) => {
             <Text style={styles.exp}>Exp {driver.exp} years</Text>
             <Text style={styles.rating}>
               {" "}
-              {driver.rating} <StarIcon size={16} color="#F2C94C" name="star" />
+              {driver.rating} <StarIcon size={16} color="#ffe40d" name="star" />
             </Text>
           </View>
           <View style={styles.rightView}>
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   rating: {
     fontSize: 18,
     lineHeight: 19,
-    color: "#FFCE31",
+    color: "#ffe40d",
     textAlign: "center",
   },
   distance: {

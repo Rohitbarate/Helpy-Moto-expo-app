@@ -222,7 +222,7 @@ const CustomerRating = [
     },
     {
         id:2,
-        name:'Wash Service',
+        name:'Cleaning Services',
         img:require("../../assets/img/washicon.png"),
         screen:'Cleaning Services'
     },

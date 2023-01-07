@@ -14,19 +14,11 @@ import Arrow from "react-native-vector-icons/AntDesign";
 import image from "../../assets/card.png";
 import { serviceTypes, vehicleTypes } from "../apis/DATA";
 
-const image2 = {
-  uri: "https://o.remove.bg/downloads/2f27e413-fe00-427b-8c1b-f0cc0a12b07a/_removal.ai__tmp-62bd142e0b23e-removebg-preview.png",
-};
-const image1 = {
-  uri: "https://o.remove.bg/downloads/91197e19-c390-40be-8f5d-b3e79dcada6c/bike-removebg-preview.png",
-};
-const image3 = {
-  uri: "https://o.remove.bg/downloads/bb7d4f30-cfe2-46f9-b5b6-371f5bd92131/images-removebg-preview.png",
-};
-
 const Home = ({ navigation }) => {
   return (
-    <ScrollView>
+    <ScrollView
+    showsVerticalScrollIndicator={false}
+    >
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
@@ -54,6 +46,7 @@ const Home = ({ navigation }) => {
       <View style={styles.screen}>
         <FlatList
           data={vehicleTypes}
+          showsHorizontalScrollIndicator={false}
           horizontal
           renderItem={({ item }) => {
             return (
@@ -108,6 +101,7 @@ const Home = ({ navigation }) => {
       <FlatList
           data={serviceTypes}
           horizontal
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => {
             return (
                 <TouchableOpacity key={item.id} onPress={()=>{

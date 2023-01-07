@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import Icon from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import LocationIcon from 'react-native-vector-icons/SimpleLineIcons';
 
 const DriverContainer = ({ driver, navigation}) => {
@@ -19,7 +19,7 @@ const DriverContainer = ({ driver, navigation}) => {
             <Text style={styles.DriverName}>{driver.name}</Text>
               <Text style={styles.ratingNum}>
                 {driver.rating}{" "}
-              <Icon size={16} color="#F2C94C" name="star" />
+              <Icon size={16} color="#ffe40d" name="star" />
               </Text>
               <Text style={styles.distanceText}><LocationIcon name="location-pin" size={14} color="#7D7FF2"/>{" "}{driver.distance} Km</Text>
           </View>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   ratingNum: {
     fontSize:16,
     lineHeight: 19,
-    color: "#FFCE31",
+    color: "#ffe40d",
     textAlign: "center",
   },
   distanceText: {

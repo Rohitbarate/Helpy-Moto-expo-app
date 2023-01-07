@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const RatingCard = ({ item }) => {
   return (
@@ -24,13 +25,13 @@ const RatingCard = ({ item }) => {
                 fontSize: 13,
                 // fontFamily:'Jost-Medium',
                 lineHeight: 19,
-                color: "#FFCE31",
+                color: "#ffe40d",
                 marginRight:4,
               }}
             >
               {item.rating}
             </Text>
-            <Image source={require("../../assets/img/Star.png")} />
+           <Icon name="star" size={14} color="#ffe40d" />
           </View>
         </View>
       </View>

@@ -8,32 +8,6 @@ const offers = [
 // services array
 const Services = [
   {
-    serviceName: "Normal Wash",
-    img: require("../../assets/img/normalwash.png"),
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi, sed magna dictumst faucibus at morbi. Hac mattis faucibus erat ut enim.",
-    price: 1000,
-    newPrice: 800,
-    time: 4,
-    warranty: 1,
-    offForMember: 10,
-  },
-  {
-    serviceName: "Deep Cleaning",
-    img: require("../../assets/img/deepwash.png"),
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi, sed magna dictumst faucibus at morbi. Hac mattis faucibus erat ut enim.",
-    price: 1500,
-    newPrice: 1200,
-    time: 6,
-    warranty: 1,
-    offForMember: 10,
-  },
-];
-
-// trending services array
-const TrendingServices = [
-  {
     id: 1,
     serviceName: "Normal Wash",
     img: require("../../assets/img/normalwash.png"),
@@ -41,31 +15,34 @@ const TrendingServices = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi, sed magna dictumst faucibus at morbi. Hac mattis faucibus erat ut enim.",
     price: 1000,
     newPrice: 800,
+    isTrending:false,
     time: 3,
     warranty: 1,
     offForMember: 10,
   },
   {
     id: 2,
-    serviceName: "Deep Cleaning",
+    serviceName: "Denting and Painting",
     img: require("../../assets/img/deepwash.png"),
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi, sed magna dictumst faucibus at morbi. Hac mattis faucibus erat ut enim.",
-    price: 1500,
-    newPrice: 1200,
-    time: 5,
+    price: 1000,
+    newPrice: 800,
+    isTrending:true,
+    time: 2,
     warranty: 1,
     offForMember: 10,
   },
   {
     id: 3,
-    serviceName: "Normal Wash",
+    serviceName: "Deep Cleaning",
     img: require("../../assets/img/normalwash.png"),
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi, sed magna dictumst faucibus at morbi. Hac mattis faucibus erat ut enim.",
-    price: 1000,
-    newPrice: 800,
-    time: 2,
+    price: 1500,
+    newPrice: 1200,
+    isTrending:true,
+    time: 5,
     warranty: 1,
     offForMember: 10,
   },
@@ -135,4 +112,4 @@ const CustomerRating = [
   },
 ];
 
-export { offers, TrendingServices, Services, FAQs, CustomerRating };
+export { offers, Services, FAQs, CustomerRating };
