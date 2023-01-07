@@ -9,7 +9,7 @@ import {
   } from "react-native";
 import React from 'react'
 
-import { offers, Services, FAQs, CustomerRating } from '../apis/services'
+import { offers, CleaningServicesData} from '../apis/DATA'
 
 const CleaningServices = ({navigation}) => {
 
@@ -120,7 +120,7 @@ const CleaningServices = ({navigation}) => {
       </View>
       <View style={styles.services}>
         {
-          Services.map((item)=>{
+          CleaningServicesData.map((item)=>{
             return(
               <ServiceView item={item} key={item.serviceName} />
             )
@@ -133,7 +133,7 @@ const CleaningServices = ({navigation}) => {
         </Text>
         {/*  trending services view */}
         <FlatList
-          data={Services.filter(item =>{
+          data={CleaningServicesData.filter(item =>{
             return item.isTrending === true
           })}
           keyExtractor={(item) => item.id}

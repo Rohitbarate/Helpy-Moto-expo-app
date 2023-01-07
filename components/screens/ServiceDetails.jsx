@@ -8,7 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import React from "react";
-import { FAQs, CustomerRating } from "../apis/services";
+import { FAQs, CustomerRating } from "../apis/DATA";
 // import CollapsibleView from "./CollapsibleView";
 import RatingCard from "./RatingCard";
 import Icon from "react-native-vector-icons/Feather";
