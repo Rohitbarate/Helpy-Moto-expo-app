@@ -1,48 +1,49 @@
-import { StyleSheet, Text, View, Image, FlatList,Share, TouchableOpacity, Linking} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  Share,
+  TouchableOpacity,
+  Linking,
+  ScrollView
+} from "react-native";
 import React from "react";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import HeartIcon from "react-native-vector-icons/Fontisto";
 import StarIcon from "react-native-vector-icons/FontAwesome";
 import ContactIcon from "react-native-vector-icons/FontAwesome";
 import LocationIcon from "react-native-vector-icons/SimpleLineIcons";
 import RatingCard from "./RatingCard";
-import { CustomerRating } from '../apis/DATA';
-import call from 'react-native-phone-call'
+import { CustomerRating } from "../apis/DATA";
+import call from "react-native-phone-call";
 
 const DriverInfo = ({ route, navigation }) => {
   const driver = route.params.driver;
 
-    function placeCall() {
-        const args = {
-            number:driver.phoneNum,
-            prompt: true,
-            skipCanOpen: true
-          }
-          
-          call(args).catch(console.error)
-    }
+  function placeCall() {
+    const args = {
+      number: driver.phoneNum,
+      prompt: true,
+      skipCanOpen: true,
+    };
 
-    function sendMsgOnWhatsapp() {
-        Linking.openURL(`https://api.whatsapp.com/send?text=Hi ${driver.name},&phone=+91${driver.phoneNum}`)
-    }
+    call(args).catch(console.error);
+  }
 
-    function share() {
-         Share.share({
-            message:`name: ${driver.name}; Mob. number: ${driver.phoneNum}; `,
-          });
-    }
+  function sendMsgOnWhatsapp() {
+    Linking.openURL(
+      `https://api.whatsapp.com/send?text=Hi ${driver.name},&phone=+91${driver.phoneNum}`
+    );
+  }
+
+  function share() {
+    Share.share({
+      message: `name: ${driver.name}; Mob. number: ${driver.phoneNum}; `,
+    });
+  }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.row}>
-        <Icon
-          name="arrow-back-ios"
-          size={24}
-          color="#5D5FEF"
-          onPress={() => navigation.goBack()}
-        />
-        <HeartIcon name="heart-alt" size={24} color="#5D5FEF" />
-      </View>
+    <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.profile}>
         <View style={styles.profileHeading}>
           <Image source={driver.img} style={styles.proImg} />
@@ -67,50 +68,33 @@ const DriverInfo = ({ route, navigation }) => {
         </View>
         <Text style={styles.desc}>{driver.desc}</Text>
         <View style={styles.contact}>
-          <TouchableOpacity 
-          onPress={placeCall}
-          style={styles.circle}
-          >
+          <TouchableOpacity onPress={placeCall} style={styles.circle}>
             <ContactIcon name="phone" color="#5D5FEF" size={24} />
           </TouchableOpacity>
-          <TouchableOpacity 
-          onPress={sendMsgOnWhatsapp}
-          style={styles.circle}
-          >
+          <TouchableOpacity onPress={sendMsgOnWhatsapp} style={styles.circle}>
             <ContactIcon name="whatsapp" color="#5D5FEF" size={24} />
           </TouchableOpacity>
-          <TouchableOpacity 
-
-          style={styles.circle}
-          >
+          <TouchableOpacity style={styles.circle}>
             <LocationIcon name="location-pin" size={24} color="#5D5FEF" />
           </TouchableOpacity>
-          <TouchableOpacity 
-            onPress={share}
-          style={styles.circle}
-          >
+          <TouchableOpacity onPress={share} style={styles.circle}>
             <ContactIcon name="share-square-o" color="#5D5FEF" size={24} />
           </TouchableOpacity>
         </View>
       </View>
       <View style={styles.ratingView}>
         <Text style={styles.HEADER}>Reviews</Text>
-            <FlatList
-              data={CustomerRating}
-              renderItem={RatingCard }
-              keyExtractor={(item)=>item.id}
-              horizontal={true}
-            />
+        <FlatList
+          data={CustomerRating}
+          renderItem={RatingCard}
+          keyExtractor={(item) => item.id}
+          horizontal={true}
+        />
       </View>
-      <TouchableOpacity
-        onPress={()=>{}}
-        style={styles.BTN}
-      >
-        <Text style={styles.btnText}>
-            Hire Now
-        </Text>
+      <TouchableOpacity onPress={() => {}} style={styles.BTN}>
+        <Text style={styles.btnText}>Hire Now</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -118,8 +102,9 @@ export default DriverInfo;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
+    flex:1,
     paddingHorizontal: 16,
+    paddingBottom:16
   },
   row: {
     display: "flex",
@@ -170,6 +155,7 @@ const styles = StyleSheet.create({
   },
   rightView: {
     alignItems: "flex-end",
+
   },
   exp: {
     fontSize: 17,
@@ -181,6 +167,9 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     color: "#ffe40d",
     textAlign: "center",
+  },
+  ratingView:{
+    marginBottom:10
   },
   distance: {
     fontSize: 17,
@@ -209,39 +198,40 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     width: "100%",
-    marginBottom: 15,
+    marginVertical: 15,
   },
-  circle:{
-    height:50,
-    width:50,
-    borderRadius:50,
-    padding:10,
-    borderColor:'#ababab',
-    borderWidth:1,
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'center',
-    shadowColor: '#4E4D4D',
+  circle: {
+    height: 50,
+    width: 50,
+    borderRadius: 50,
+    padding: 10,
+    borderColor: "#ababab",
+    borderWidth: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#4E4D4D",
   },
-  HEADER:{
-    fontSize:17,
-    lineHeight:26,
-    fontWeight:'700',
-    marginBottom:5
+  HEADER: {
+    fontSize: 17,
+    lineHeight: 26,
+    fontWeight: "700",
+    marginBottom: 10,
   },
-  BTN:{
-    width:'100%',
-    height:50,
-    backgroundColor:'#5D5FEF',
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius:8,
-    marginTop:8
+  BTN: {
+    width: "100%",
+    height: 50,
+    backgroundColor: "#5D5FEF",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    marginTop: 8,
+    marginBottom:16
   },
-  btnText:{
-    fontSize:16,
-    fontWeight:'600',
-    color:'#fff'
-  }
+  btnText: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#fff",
+  },
 });

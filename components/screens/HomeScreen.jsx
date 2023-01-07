@@ -8,7 +8,8 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import Location from "react-native-vector-icons/Octicons";
 import TowingService from "./TowingService"
 import CleaningServices from "./CleaningServices";
-import ServiceDetails from "./ServiceDetails"
+import ServiceDetails from "./ServiceDetails";
+import HeartIcon from "react-native-vector-icons/Fontisto";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -30,20 +31,7 @@ export default function App() {
               />
             </TouchableOpacity>
           ),
-          headerTitle: () => (
-            <View style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-              <Location
-                name="location"
-                size={24}
-                color="#fff"
-              />
-              <View style={{display:"flex",flexDirection:'column',marginLeft:10}}>
-              <Text style={[styles.txt,{fontSize:16}]}>Delhi </Text>
-              <Text style={styles.txt}>Enter your location</Text>
-              </View>
-              
-            </View>
-          ),
+          
         }}
       >
         <Stack.Screen
@@ -55,6 +43,20 @@ export default function App() {
                 <Icon name="bars" size={24} color="#fff" />
               </TouchableOpacity>
             ),
+            headerTitle: () => (
+              <View style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+                <Location
+                  name="location"
+                  size={24}
+                  color="#fff"
+                />
+                <View style={{display:"flex",flexDirection:'column',marginLeft:10}}>
+                <Text style={[styles.txt,{fontSize:16}]}>Delhi </Text>
+                <Text style={styles.txt}>Enter your location</Text>
+                </View>
+                
+              </View>
+            ),
           }}
         />
         <Stack.Screen
@@ -65,16 +67,21 @@ export default function App() {
         <Stack.Screen
           name="Driver"
           component={DriverInfo}
-          options={{ headerShown: false }}
+          options={{ 
+            headerRight: () => (
+              <HeartIcon 
+              name="heart-alt" 
+              size={24} 
+              color="#fff" 
+              />
+            ),
+            
+          }}
         />
         <Stack.Screen
           name="Cleaning Services"
           component={CleaningServices}
         />
-        {/* <Stack.Screen
-          name="ServiceDetails"
-          component={ServiceDetails}
-        />  */}
         <Stack.Screen
           name="Towing Service"
           component={TowingService}
