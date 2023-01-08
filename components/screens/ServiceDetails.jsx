@@ -8,7 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import React from "react";
-import { FAQs, CustomerRating } from "../apis/DATA";
+import {CustomerRating } from "../apis/DATA";
 // import CollapsibleView from "./CollapsibleView";
 import RatingCard from "./RatingCard";
 import Icon from "react-native-vector-icons/Feather";
@@ -16,6 +16,7 @@ import CollapsibleView from "./CollapsibleView";
 
 const ServiceDetails = ({ route }) => {
   const item = route.params.item;
+  const {FAQ} = item
 
   return (
     <ScrollView
@@ -119,10 +120,12 @@ const ServiceDetails = ({ route }) => {
         <Text style={styles.HEADER}>FAQs</Text>
 
         {/*Code for Collapsible Start*/}
-        <CollapsibleView />
-        {/* {FAQs.map((faq) => {
-          return <CollapsibleView key={faq.title} data={faq} />;
-        })} */}
+        
+        {
+          FAQ.map((faq)=>{
+            return <CollapsibleView que={faq.que} ans={faq.ans} key={faq.ans+faq.que} />
+          })
+        }
 
         {/*Code for Collapsible ends*/}
       </View>
@@ -152,7 +155,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 23,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 15,
   },
   VIEW: {
     width: 360,

@@ -274,6 +274,18 @@ const offers = [
       time: 3,
       warranty: 1,
       offForMember: 10,
+      FAQ:[
+        {
+          que: "How this service is going to affect my vehicle condition?",
+          ans:
+            "The following terms and conditions, together with any referenced documents form a legal agreement between you and your employer, employees,agents, contractors and any other entity on whose behalf you accept these terms",
+        },
+        {
+          que: "Why should I choose this service?",
+          ans:
+            "A Privacy Policy agreement is the agreement where you specify if you collect personal data from your users,what kind of personal data you collect and what you do with that data.",
+        },
+      ]
     },
     {
       id: 2,
@@ -287,6 +299,18 @@ const offers = [
       time: 2,
       warranty: 1,
       offForMember: 10,
+      FAQ:[
+        {
+          que: "What is the payment method?",
+          ans:
+            "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
+        },
+        {
+          que: "What if cleaning is not done properly?",
+          ans:
+            "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
+        },
+      ]
     },
     {
       id: 3,
@@ -300,36 +324,53 @@ const offers = [
       time: 5,
       warranty: 1,
       offForMember: 10,
+      FAQ:[
+        {
+          que: "What is the payment method?",
+          ans:
+            "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
+        },
+        {
+          que: "What if cleaning is not done properly?",
+          ans:
+            "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
+        },
+        {
+          que: "How can Premium Members avail the discount offers?",
+          ans:
+            "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
+        },
+      ]
     },
   ];
   
   // fQA data
   const FAQs = [
     {
-      title: "How this service is going to affect my vehicle condition?",
-      content:
+      que: "How this service is going to affect my vehicle condition?",
+      ans:
         "The following terms and conditions, together with any referenced documents form a legal agreement between you and your employer, employees,agents, contractors and any other entity on whose behalf you accept these terms",
     },
     {
-      title: "Why should I choose this service?",
-      content:
+      que: "Why should I choose this service?",
+      ans:
         "A Privacy Policy agreement is the agreement where you specify if you collect personal data from your users,what kind of personal data you collect and what you do with that data.",
     },
     {
-      title: "What is the payment method?",
-      content:
+      que: "What is the payment method?",
+      ans:
         "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
     },
     {
-      title: "What if cleaning is not done properly?",
-      content:
+      que: "What if cleaning is not done properly?",
+      ans:
         "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
     },
     {
-      title: "How can Premium Members avail the discount offers?",
-      content:
+      que: "How can Premium Members avail the discount offers?",
+      ans:
         "Our Return & Refund Policy template lets you get started with a Return and Refund Policy agreement.This template is free to download and use. According to TrueShip study, over 60% of customers review a Return/Refund Policy before they make a purchasing decision.",
     },
   ];
   
-export {drivers,CustomerRating,vehicleTypes,serviceTypes,offers,CleaningServicesData,FAQs};
+export {drivers,CustomerRating,vehicleTypes,serviceTypes,offers,CleaningServicesData};
