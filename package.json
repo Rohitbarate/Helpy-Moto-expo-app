@@ -32,5 +32,16 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rohitbarate/Helpy-Moto-Main-app.git"
+  },
+  "author": "rohit barate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rohitbarate/Helpy-Moto-Main-app/issues"
+  },
+  "homepage": "https://github.com/Rohitbarate/Helpy-Moto-Main-app#readme",
+  "description": ""
 }

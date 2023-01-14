@@ -13,10 +13,24 @@ import {CustomerRating } from "../apis/DATA";
 import RatingCard from "./RatingCard";
 import Icon from "react-native-vector-icons/Feather";
 import CollapsibleView from "./CollapsibleView";
+import call from "react-native-phone-call";
+
+
 
 const ServiceDetails = ({ route }) => {
   const item = route.params.item;
   const {FAQ} = item
+  const Customer_care_num = '9810876961'
+
+function placeCall() {
+  const args = {
+    number: Customer_care_num,
+    prompt: true,
+    skipCanOpen: true,
+  };
+
+  call(args).catch(console.error);
+}
 
   return (
     <ScrollView
@@ -67,6 +81,31 @@ const ServiceDetails = ({ route }) => {
               Add
             </Text>
           </TouchableOpacity>
+        </View>
+        <View
+        style={{
+          marginTop:30,
+          alignItems:'center'
+        }}
+        >
+        <TouchableOpacity
+        onPress={placeCall}
+         style={[styles.button,{width:200,paddingVertical:10}]}>
+            <Text
+              style={{
+                fontSize: 22,
+                textAlignVertical:'center',
+                // lineHeight: 20,
+                paddingHorizontal: 20,
+                color: "#fff",
+                fontWeight:'bold'
+              }}
+            >
+             Book Service 
+            </Text>
+            {/* <Text style={{color:'#fff',fontSize: 12,fontStyle:'italic'}}>by placing call to Customer care</Text> */}
+          </TouchableOpacity>
+          <Text style={{color:'#000',fontSize: 12,fontStyle:'italic'}}>*by placing call to customer care</Text>
         </View>
       </View>
       <View style={[styles.serviceContainer, styles.VIEW]}>
@@ -189,6 +228,9 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#5D5FEF",
     borderRadius: 4,
+    textAlign:'center',
+    alignItems:'center',
+    justifyContent:'center'
   },
   serviceContainer: {
     flexDirection: "column",
