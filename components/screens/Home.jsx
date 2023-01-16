@@ -9,12 +9,13 @@ import {
   FlatList,
   Image,
 } from "react-native";
-
 import Arrow from "react-native-vector-icons/AntDesign";
 import image from "../../assets/card.png";
 import { serviceTypes, vehicleTypes } from "../apis/DATA";
 
+
 const Home = ({ navigation }) => {
+
   return (
     <ScrollView
     showsVerticalScrollIndicator={false}
@@ -22,7 +23,7 @@ const Home = ({ navigation }) => {
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        style={{ marginTop: 16 }}
+        style={{ marginTop: 10 ,width:'95%',paddingRight:10,alignSelf:'center'}}
       >
         <ImageBackground source={image} style={styles.image}>
           <Text style={styles.txt1}>Got Stuck? </Text>
@@ -39,12 +40,8 @@ const Home = ({ navigation }) => {
           </TouchableOpacity>
         </ImageBackground>
       </ScrollView>
-
-      <View style={styles.nrmltxt}>
-        <Text style={styles.heading}>Find Mechanic</Text>
-      </View>
       <View style={styles.screen}>
-        <FlatList
+        {/* <FlatList
           data={vehicleTypes}
           showsHorizontalScrollIndicator={false}
           horizontal
@@ -58,6 +55,15 @@ const Home = ({ navigation }) => {
                 <Text style={styles.vhclTxt}>{item.name}</Text>
               </View>
             );
+          }}
+        /> */}
+        <Image
+          source={require('../../assets/img/map.png')}
+          style={{
+              height:180,
+              width:'95%',
+              alignSelf:'center',
+              borderRadius:10
           }}
         />
       </View>
@@ -98,6 +104,9 @@ const Home = ({ navigation }) => {
           <Text style={styles.seeAllBtn}>View All  <Arrow name="right" size={14} color="#3F41D1" /></Text>
         </TouchableOpacity>
       </View>
+      <View
+      style={{marginBottom:10}}
+      >
       <FlatList
           data={serviceTypes}
           horizontal
@@ -118,7 +127,8 @@ const Home = ({ navigation }) => {
             );
           }}
         />
-    </ScrollView>
+        </View>
+      </ScrollView>
   );
 };
 
@@ -139,7 +149,7 @@ const styles = StyleSheet.create({
     width: 260,
     height: 140,
     marginTop: 10,
-    marginLeft: 20,
+    marginLeft: 16,
     borderRadius: 10,
     overflow: "hidden",
     alignItems: "center",
@@ -184,8 +194,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   screen: {
-    marginTop: 25,
-    marginBottom: 30,
+    marginVertical:15
   },
   vehivleDiv: {
     width: 100,
@@ -208,7 +217,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:2
   },
   hireDrDiv: {
-    width: "90%",
+    width: "95%",
     height: 120,
     backgroundColor:
       "linear-gradient(127.16deg, #5D5FEF -18.65%, rgba(93, 95, 239, 0.5) 23.38%, rgba(69, 66, 211, 0.51) 65.4%, #CCCEF8 107.43%, #4251D3 149.46%);",
